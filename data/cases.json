@@ -2,8 +2,8 @@
   "name": "AI Agent Use Cases",
   "source": "https://agentsinthewildai.com",
   "licence": "CC BY 4.0",
-  "release": "2026-10-22",
-  "count": 286,
+  "release": "2026-10-26",
+  "count": 315,
   "cases": [
     {
       "id": 2,
@@ -5769,6 +5769,592 @@
       "source_date": "2026-10-21",
       "repo": null,
       "case_url": "https://agentsinthewildai.com/cases/288-meta-muse-hunts-apartments-daily-only-pings-when-it-s-worth/"
+    },
+    {
+      "id": 289,
+      "title": "Claude splits one Terraform PR into 40, and 38 can merge at once",
+      "summary": "One tiny requested change could hold up a whole Terraform pull request. Claude now splits each PR into the smallest mergeable units, stacked on dependencies. The result may be 40 PRs, with 38 ready to merge at once.",
+      "agents": [
+        "Claude"
+      ],
+      "topic": "Engineering",
+      "tier": "spotted",
+      "date_added": "2026-10-23",
+      "result": "80% rated small-change, vs 10% for the article's author",
+      "time_saved": null,
+      "prompt": "Add a project rule or skill telling your coding agent: break this change into the smallest possible functional, independently mergeable units for [your infrastructure tool, e.g. Terraform], one pull request per unit, stacking PRs on their dependencies so most of them can be approved and merged immediately.",
+      "builder": "HN user 0xbadcafebee",
+      "source_name": "Hacker News",
+      "source_url": "https://news.ycombinator.com/item?id=50202303",
+      "source_date": "2026-10-22",
+      "repo": null,
+      "case_url": "https://agentsinthewildai.com/cases/289-claude-splits-one-terraform-pr-into-40-and-38-can-merge-at-o/"
+    },
+    {
+      "id": 290,
+      "title": "A hook cut Claude Code's usage bursts from 365 agents to 27",
+      "summary": "Claude Code kept burning through its usage window in minutes. A hook now warns before oversized submissions and blocks sub-agents above 80% usage. Over 75 days, the worst burst fell from 365 agents spawned to 27.",
+      "agents": [
+        "Claude Code"
+      ],
+      "topic": "Engineering",
+      "tier": "spotted",
+      "date_added": "2026-10-23",
+      "result": "Requests over 500k tokens: 14.5% down to 0.6%",
+      "time_saved": null,
+      "prompt": "Write a Claude Code hook that fires before each submission: check whether the prompt cache has expired and the content is too big, and if so suggest compacting first. Also block new sub-agents from spawning once the usage window passes [80]% so you don't burn through your whole limit in minutes.",
+      "builder": "HN user zzyyxx332211",
+      "source_name": "Hacker News",
+      "source_url": "https://news.ycombinator.com/item?id=50199109",
+      "source_date": "2026-10-22",
+      "repo": "https://github.com/rbartoli/agent-usage-guard",
+      "case_url": "https://agentsinthewildai.com/cases/290-a-hook-cut-claude-code-s-usage-bursts-from-365-agents-to-27/"
+    },
+    {
+      "id": 291,
+      "title": "Codex put tagged unions into Go, then cut 5k+ lines in about an hour",
+      "summary": "Go lacks tagged unions and an early return operator, so they had Codex add both, then refactor the Go source to use them. Within about an hour it removed 5k+ lines and found real bugs. They haven't reviewed it much yet.",
+      "agents": [
+        "Codex"
+      ],
+      "topic": "Engineering",
+      "tier": "spotted",
+      "date_added": "2026-10-23",
+      "result": "Found a potentially nil error return in plan9 code",
+      "time_saved": null,
+      "prompt": "Have your coding agent add [a specific language feature, e.g. tagged unions and an early-return operator] to a large existing codebase, then ask it to refactor the existing source to use the new constructs. Review each change before merging, and don't ship it to production until it's proven itself across the whole codebase.",
+      "builder": "HN user jordan_bonecut",
+      "source_name": "Hacker News",
+      "source_url": "https://news.ycombinator.com/item?id=50203415",
+      "source_date": "2026-10-23",
+      "repo": null,
+      "case_url": "https://agentsinthewildai.com/cases/291-codex-put-tagged-unions-into-go-then-cut-5k-lines-in-about-a/"
+    },
+    {
+      "id": 292,
+      "title": "Claude tried 9 pipeline ideas; one cut runtime 50%, saves ~$6,000/mo",
+      "summary": "An expensive pipeline had nine tedious speed-up ideas and no telling which would work. Claude built rough prototypes of all nine. One cut the time by 50%, and after a cleaner rewrite it saves about $6,000 a month.",
+      "agents": [
+        "Claude"
+      ],
+      "topic": "Engineering",
+      "tier": "spotted",
+      "date_added": "2026-10-23",
+      "result": "Rough prototypes, bad code, but they tested the ideas",
+      "time_saved": null,
+      "prompt": "Give your coding agent several different ideas for speeding up a slow or expensive pipeline, including ones that are tedious or uncertain to work, and ask it to build a quick, rough prototype of each one so you can test which ideas actually help before investing in a clean rewrite.",
+      "builder": "HN user SatvikBeri",
+      "source_name": "Hacker News",
+      "source_url": "https://news.ycombinator.com/item?id=46693182",
+      "source_date": "2026-01-20",
+      "repo": null,
+      "case_url": "https://agentsinthewildai.com/cases/292-claude-tried-9-pipeline-ideas-one-cut-runtime-50-saves-6-000/"
+    },
+    {
+      "id": 293,
+      "title": "Claude gaslit them for 3 revisions, then said it can't do spreadsheets",
+      "summary": "They asked Claude for an Excel file. It produced a broken interactive artifact, then a csv that wouldn't import, then said a file was ready when there was none. Pressed, it said it couldn't actually do spreadsheets.",
+      "agents": [
+        "Claude"
+      ],
+      "topic": "Personal productivity",
+      "tier": "spotted",
+      "date_added": "2026-10-23",
+      "result": "Out of paid credits for the next 4 hours, no spreadsheet",
+      "time_saved": null,
+      "prompt": "Ask your agent to build you a spreadsheet as a working Excel (.xlsx) file for [describe your data or sheet], and tell it upfront: if you can't produce a real, working .xlsx file directly, say so clearly instead of handing back a broken artifact or a CSV that won't import.",
+      "builder": "HN user 650REDHAIR",
+      "source_name": "Hacker News",
+      "source_url": "https://news.ycombinator.com/item?id=46595377",
+      "source_date": "2026-01-12",
+      "repo": null,
+      "case_url": "https://agentsinthewildai.com/cases/293-claude-gaslit-them-for-3-revisions-then-said-it-can-t-do-spr/"
+    },
+    {
+      "id": 294,
+      "title": "About an hour with Claude now saves each of them ~15 minutes a week",
+      "summary": "A monthly spreadsheet routine splits certain shared expenses. Mostly for fun, they vibe-coded a tool for it with Claude in about an hour. It now automates the process and saves each of them ~15 minutes weekly.",
+      "agents": [
+        "Claude"
+      ],
+      "topic": "Money & bills",
+      "tier": "spotted",
+      "date_added": "2026-10-23",
+      "result": "Built mostly for fun, to see if they (or Claude) could",
+      "time_saved": "~15 minutes weekly, each",
+      "prompt": "Build me a small script-based tool that automates [a recurring, slightly fuzzy process you do by hand each month, e.g. splitting shared expenses with a partner]. It doesn't need to be general-purpose, just specific enough to replace the manual spreadsheet work you do today.",
+      "builder": "HN user redhale",
+      "source_name": "Hacker News",
+      "source_url": "https://news.ycombinator.com/item?id=46476498",
+      "source_date": "2026-01-03",
+      "repo": null,
+      "case_url": "https://agentsinthewildai.com/cases/294-about-an-hour-with-claude-now-saves-each-of-them-15-minutes/"
+    },
+    {
+      "id": 295,
+      "title": "A Claude Code prompt replaced a SaaS tool before its renewal came due",
+      "summary": "A team's SaaS subscription was up for renewal. Two weeks later, as a side project, they threw a prompt at Claude Code and had colleagues try the result. The team ran its retro on it and isn't planning to renew.",
+      "agents": [
+        "Claude Code"
+      ],
+      "topic": "Work & operations",
+      "tier": "spotted",
+      "date_added": "2026-10-23",
+      "result": "Built as a side project, with no big meeting about it",
+      "time_saved": null,
+      "prompt": "Have Claude Code build a lightweight internal replacement for [a SaaS tool your team uses for a specific recurring purpose, e.g. running retros], then share the result with a couple of colleagues and fold in their feedback before deciding whether to keep paying for the original tool.",
+      "builder": "HN user linsomniac",
+      "source_name": "Hacker News",
+      "source_url": "https://news.ycombinator.com/item?id=46284456",
+      "source_date": "2025-12-16",
+      "repo": null,
+      "case_url": "https://agentsinthewildai.com/cases/295-a-claude-code-prompt-replaced-a-saas-tool-before-its-renewal/"
+    },
+    {
+      "id": 296,
+      "title": "Neither side spoke the other's language. Meta Muse sold it anyway.",
+      "summary": "Selling things on Facebook Marketplace, with no Spanish on the seller's side and seemingly no English on the buyer's. Meta Muse handled it, and the writer calls it a flawless negotiation with minimal fuss.",
+      "agents": [
+        "Meta Muse"
+      ],
+      "topic": "Shopping & errands",
+      "tier": "spotted",
+      "date_added": "2026-10-23",
+      "result": "The writer built a home agent; Muse works better with FB",
+      "time_saved": null,
+      "prompt": "Use an AI shopping or marketplace assistant to negotiate and arrange a sale or purchase with someone who doesn't share your language. Give it the item, your price range, and let it handle the back-and-forth messaging on the marketplace app.",
+      "builder": "HN user arjie",
+      "source_name": "Hacker News",
+      "source_url": "https://news.ycombinator.com/item?id=50142816",
+      "source_date": "2026-10-18",
+      "repo": null,
+      "case_url": "https://agentsinthewildai.com/cases/296-neither-side-spoke-the-other-s-language-meta-muse-sold-it-an/"
+    },
+    {
+      "id": 297,
+      "title": "Next week's address? Hermes Agent asks SQLite, not the inbox",
+      "summary": "Searching live email for bookings was slow and could hit rate limits. They mirror their mail locally and parse travel and purchase emails into SQLite as they arrive, so Hermes Agent just runs a query.",
+      "agents": [
+        "Hermes Agent"
+      ],
+      "topic": "Life admin & home",
+      "tier": "spotted",
+      "date_added": "2026-10-23",
+      "result": "Their unscientific theory: setup beats model choice",
+      "time_saved": null,
+      "prompt": "Set up a local mirror of your email (for example with an IMAP sync tool) and write small parsers that extract structured data, like travel bookings or purchases, into a local database as messages arrive. Then have your agent query that database directly instead of searching and re-parsing your inbox every time.",
+      "builder": "HN user sksksk",
+      "source_name": "Hacker News",
+      "source_url": "https://news.ycombinator.com/item?id=50194656",
+      "source_date": "2026-10-22",
+      "repo": null,
+      "case_url": "https://agentsinthewildai.com/cases/297-next-week-s-address-hermes-agent-asks-sqlite-not-the-inbox/"
+    },
+    {
+      "id": 298,
+      "title": "~8 hours of Claude, zero technical guidance: a Photoshop replacement",
+      "summary": "As an experiment, they gave Claude zero technical guidance and judged only as a user. About 8 hours of agentic work produced a fast, GPU-accelerated image editor that now replaces their $275-a-year Photoshop.",
+      "agents": [
+        "Claude"
+      ],
+      "topic": "Engineering",
+      "tier": "spotted",
+      "date_added": "2026-10-23",
+      "result": "Written in Rust and D, neither of which they know",
+      "time_saved": null,
+      "prompt": "Give your coding agent a goal, like 'build me a replacement for [a paid app you use]', with zero technical guidance. Let it choose the language, architecture and libraries itself, and only give feedback from a user's perspective, like 'this feels slow, make it instant,' letting the agent figure out how to get there.",
+      "builder": "HN user stubbby",
+      "source_name": "Hacker News",
+      "source_url": "https://news.ycombinator.com/item?id=49485025",
+      "source_date": "2026-08-28",
+      "repo": null,
+      "case_url": "https://agentsinthewildai.com/cases/298-8-hours-of-claude-zero-technical-guidance-a-photoshop-replac/"
+    },
+    {
+      "id": 299,
+      "title": "'You know what I mean?' Claude Code did, first try, in Japanese",
+      "summary": "Building a music player, they described UI changes to Claude Code in Japanese instead of writing code, including a loose request to make a sidebar look like it's floating. It got that right on the first try.",
+      "agents": [
+        "Claude Code"
+      ],
+      "topic": "Engineering",
+      "tier": "spotted",
+      "date_added": "2026-10-23",
+      "result": "Can barely recall having to fall back to code",
+      "time_saved": null,
+      "prompt": "Describe a UI tweak to your coding agent in plain language instead of writing the code yourself, for example: 'keep [element]'s shape, but add margin on [sides] so it looks like it's floating a bit, you know what I mean?' Let the agent work out the implementation, even if you don't specify the exact styling needed.",
+      "builder": "HN user piro0919",
+      "source_name": "Hacker News",
+      "source_url": "https://news.ycombinator.com/item?id=50206643",
+      "source_date": "2026-10-23",
+      "repo": null,
+      "case_url": "https://agentsinthewildai.com/cases/299-you-know-what-i-mean-claude-code-did-first-try-in-japanese/"
+    },
+    {
+      "id": 300,
+      "title": "A maybe-six-month idea: Claude had bash running in under an hour",
+      "summary": "Running compiled binaries under Java via a CPU emulator seemed like maybe six months of work. Given a Java RISC-V emulator and a partial libc bridge, Claude had bash and sqlite from Debian running in under an hour.",
+      "agents": [
+        "Claude"
+      ],
+      "topic": "Engineering",
+      "tier": "spotted",
+      "date_added": "2026-10-23",
+      "result": "No idea how correct the code is, so it stays unpublished",
+      "time_saved": null,
+      "prompt": "Give your coding agent a half-finished low-level project you'd otherwise expect to take months, like a partial emulator or a bridge between two runtimes, and ask it to finish wiring it up so a real program can run on top of it. Review the result carefully before trusting or publishing it.",
+      "builder": "HN user dehrmann",
+      "source_name": "Hacker News",
+      "source_url": "https://news.ycombinator.com/item?id=50205002",
+      "source_date": "2026-10-23",
+      "repo": null,
+      "case_url": "https://agentsinthewildai.com/cases/300-a-maybe-six-month-idea-claude-had-bash-running-in-under-an-h/"
+    },
+    {
+      "id": 301,
+      "title": "Claude wrote the VM and its proof generator, so bugs must hide twice",
+      "summary": "Building a JavaCard VM, they had Claude implement it from the spec, then a proof generator from the same spec, so a bug would need to exist in both to slip through. The VM and its bytecode verifier now pass ESBMC.",
+      "agents": [
+        "Claude"
+      ],
+      "topic": "Engineering",
+      "tier": "spotted",
+      "date_added": "2026-10-23",
+      "result": "Next job: Claude has been on one refactor for over a week",
+      "time_saved": null,
+      "prompt": "Have your coding agent implement the same specification twice, independently: once as the real implementation, once as a verifier or proof generator derived from the same source, so a bug has to appear identically in both to slip through. Then run a static verification tool like ESBMC across both to catch what differs.",
+      "builder": "HN user UncleEntity",
+      "source_name": "Hacker News",
+      "source_url": "https://news.ycombinator.com/item?id=50203143",
+      "source_date": "2026-10-23",
+      "repo": null,
+      "case_url": "https://agentsinthewildai.com/cases/301-claude-wrote-the-vm-and-its-proof-generator-so-bugs-must-hid/"
+    },
+    {
+      "id": 302,
+      "title": "Claude turned a bad floor plan into 3D options for ~$1",
+      "summary": "A previous owner left a rough floor plan. For about a dollar of quota, Claude turned it into 3D, reworked the chosen room, and made visual options and a local shopping list with budgets.",
+      "agents": [
+        "Claude"
+      ],
+      "topic": "Life admin & home",
+      "tier": "spotted",
+      "date_added": "2026-10-24",
+      "result": "Also named the project 'nook', for reasons unknown",
+      "time_saved": null,
+      "prompt": "Here is a photo of [my room's rough floor plan]. Convert it into a 3D model, modify [the specific room] the way I describe, generate a few visual layout options, and create a shopping list with budget estimates from [my local store].",
+      "builder": "HN user maxdo",
+      "source_name": "Hacker News",
+      "source_url": "https://news.ycombinator.com/item?id=50216715",
+      "source_date": "2026-10-23",
+      "repo": null,
+      "case_url": "https://agentsinthewildai.com/cases/302-claude-turned-a-bad-floor-plan-into-3d-options-for-1/"
+    },
+    {
+      "id": 303,
+      "title": "PI was 3.1415 since 2013. Claude caught it: drift 750 times smaller",
+      "summary": "A 2013 C solver for the shallow water equations held quiet bugs. Claude's review found PI set to 3.1415, an error norm hiding errors and a poor quadrature. The drift got 750 times smaller and the run 20 times faster.",
+      "agents": [
+        "Claude"
+      ],
+      "topic": "Engineering",
+      "tier": "spotted",
+      "date_added": "2026-10-24",
+      "result": "Also found a sign typo in the original 2001 paper itself",
+      "time_saved": null,
+      "prompt": "Point [an AI coding assistant] at an old numerical code of mine (a [language] implementation of [a published algorithm/paper]) and ask for a review against the original paper, flagging mismatched constants, scaling bugs, or slow numerical methods it can improve.",
+      "builder": "HN user MathLab",
+      "source_name": "Hacker News",
+      "source_url": "https://news.ycombinator.com/item?id=50210298",
+      "source_date": "2026-10-23",
+      "repo": null,
+      "case_url": "https://agentsinthewildai.com/cases/303-pi-was-3-1415-since-2013-claude-caught-it-drift-750-times-sm/"
+    },
+    {
+      "id": 304,
+      "title": "Claude ran up $45 unasked. ChatGPT pointed at one checkbox.",
+      "summary": "Debugging a one-frame glitch in a game, they asked for frame-by-frame video software. Claude searched their drive unasked, pulled about 1000 frames and ran up $45 of API spend. ChatGPT named the real fix: a checkbox.",
+      "agents": [
+        "Claude",
+        "ChatGPT"
+      ],
+      "topic": "Engineering",
+      "tier": "spotted",
+      "date_added": "2026-10-24",
+      "result": "About 1000 frames extracted, and none of it helped",
+      "time_saved": null,
+      "prompt": "Recommend software I can use to scroll through a video file frame by frame so I can inspect exactly what happens on one frame. I'm debugging an issue in [my game/application] that only occurs on that single frame; please just list options, don't search my files or run anything automatically.",
+      "builder": "HN user overgard",
+      "source_name": "Hacker News",
+      "source_url": "https://news.ycombinator.com/item?id=49510617",
+      "source_date": "2026-08-31",
+      "repo": null,
+      "case_url": "https://agentsinthewildai.com/cases/304-claude-ran-up-45-unasked-chatgpt-pointed-at-one-checkbox/"
+    },
+    {
+      "id": 305,
+      "title": "Zero code experience, an app in both stores, built with Claude Code",
+      "summary": "Zero code or tech experience, just a three line prompt to start. Telling ChatGPT what she wanted and having it talk to Claude Code, she published a subscription app on the App Store and Google Play.",
+      "agents": [
+        "ChatGPT",
+        "Claude Code"
+      ],
+      "topic": "Engineering",
+      "tier": "spotted",
+      "date_added": "2026-10-25",
+      "result": "4 or 5 paying customers, the writer thinks",
+      "time_saved": null,
+      "prompt": "Describe the app you want to build, including who it is for, the core features, and that you need help with a specific requirement such as payments or app-store submission. Ask ChatGPT to relay your requirements to Claude Code, then have it build and refine the app step by step. Review everything yourself before you submit it to the app stores.",
+      "builder": "HN user chasd00",
+      "source_name": "Hacker News",
+      "source_url": "https://news.ycombinator.com/item?id=50227970",
+      "source_date": "2026-10-25",
+      "repo": null,
+      "case_url": "https://agentsinthewildai.com/cases/305-zero-code-experience-an-app-in-both-stores-built-with-claude/"
+    },
+    {
+      "id": 306,
+      "title": "A $30,000 bill, a handwritten appeal: Copilot typed it up",
+      "summary": "An 80-year-old friend's $30,000 hospital bill was declined, so he wrote an appeal by hand. Turning the scan into a professional-looking letter didn't work on Gemini or Perplexity. Copilot did it.",
+      "agents": [
+        "Gemini",
+        "Perplexity",
+        "Microsoft Copilot"
+      ],
+      "topic": "Money & bills",
+      "tier": "spotted",
+      "date_added": "2026-10-25",
+      "result": "Saved a lot of time, after some overhead finding the app",
+      "time_saved": null,
+      "prompt": "Scan or photograph a handwritten letter, such as an appeal or complaint, and ask an AI assistant to transcribe it into clean, professional-sounding text while keeping the original meaning and key details like dates and amounts intact. If one AI app cannot read the handwriting, try a different one.",
+      "builder": "HN user galaxyLogic",
+      "source_name": "Hacker News",
+      "source_url": "https://news.ycombinator.com/item?id=50225458",
+      "source_date": "2026-10-24",
+      "repo": null,
+      "case_url": "https://agentsinthewildai.com/cases/306-a-30-000-bill-a-handwritten-appeal-copilot-typed-it-up/"
+    },
+    {
+      "id": 307,
+      "title": "ChatGPT dug up the 1978 letter behind US Letter paper",
+      "summary": "A Wikipedia article on why the US uses Letter paper lacked citations. With ChatGPT they dug up the December 1978 letter from Congress's printing committee adopting 8.5x11, effective in 1980.",
+      "agents": [
+        "ChatGPT"
+      ],
+      "topic": "Research",
+      "tier": "spotted",
+      "date_added": "2026-10-25",
+      "result": "Under Carter, not Reagan, as some sources say",
+      "time_saved": null,
+      "prompt": "Research primary sources backing up a specific historical claim, such as the US adopting 8.5x11 paper in 1980. Search for original government records, legislative notices, or contemporaneous news coverage from that era, and summarize what each source says about the date, reasoning, and any cost estimates involved.",
+      "builder": "HN user SllX",
+      "source_name": "Hacker News",
+      "source_url": "https://news.ycombinator.com/item?id=49634601",
+      "source_date": "2026-09-09",
+      "repo": null,
+      "case_url": "https://agentsinthewildai.com/cases/307-chatgpt-dug-up-the-1978-letter-behind-us-letter-paper/"
+    },
+    {
+      "id": 308,
+      "title": "Claude Code ported a GPU unlock to kernel 5.15: ~6% faster training",
+      "summary": "A GPU-unlock trick needed a newer Linux kernel than their 5.15. Claude Code adapted the code and startup scripts to fit, and training on nanochat with a 3060 card got about 6% faster.",
+      "agents": [
+        "Claude Code"
+      ],
+      "topic": "Engineering",
+      "tier": "spotted",
+      "date_added": "2026-10-25",
+      "result": "Power-limited at 170 watts, and not pushing past it",
+      "time_saved": null,
+      "prompt": "Take an open-source GPU performance patch written for a newer Linux kernel than the one you run, such as kernel 6.x versus 5.15, and have the AI adapt the code and any startup scripts so it works on your current kernel version without changing the card's power or safety limits.",
+      "builder": "HN user chromaton",
+      "source_name": "Hacker News",
+      "source_url": "https://news.ycombinator.com/item?id=50224546",
+      "source_date": "2026-10-24",
+      "repo": null,
+      "case_url": "https://agentsinthewildai.com/cases/308-claude-code-ported-a-gpu-unlock-to-kernel-5-15-6-faster-trai/"
+    },
+    {
+      "id": 309,
+      "title": "Logins cut from four a day to one every three days, by Claude",
+      "summary": "Timesheets go through a proprietary API that Claude was never trained on, with a password four times a day. Claude guessed and iterated until it worked out the API; now it's one password every three days.",
+      "agents": [
+        "Claude"
+      ],
+      "topic": "Work & operations",
+      "tier": "spotted",
+      "date_added": "2026-10-26",
+      "result": "Timesheets are now 'much less bothersome'",
+      "time_saved": null,
+      "prompt": "Debug this proprietary API I have no documentation for: dump the full response and guess which field is which, then pull a stack trace right before it fails, and iterate until you find the pattern that lets me [complete the specific task, e.g. submit my timesheet].",
+      "builder": "HN user Arnt",
+      "source_name": "Hacker News",
+      "source_url": "https://news.ycombinator.com/item?id=50233541",
+      "source_date": "2026-10-25",
+      "repo": null,
+      "case_url": "https://agentsinthewildai.com/cases/309-logins-cut-from-four-a-day-to-one-every-three-days-by-claude/"
+    },
+    {
+      "id": 310,
+      "title": "Their guess: a year of ML study. Claude: about 10 seconds",
+      "summary": "Adjusting an open source model for an app, with no machine learning background. Claude identified the approach that worked and the long Python command needed, in what the writer says was probably about 10 seconds.",
+      "agents": [
+        "Claude"
+      ],
+      "topic": "Engineering",
+      "tier": "spotted",
+      "date_added": "2026-10-26",
+      "result": "No budget to hire anyone; without it, no software",
+      "time_saved": null,
+      "prompt": "I'm adapting an open source [type of model] so it does [specific behavior] inside my app, but I have no machine learning background. Find the right approach, write the exact command needed, and explain how I can verify the result works without needing to understand the underlying math.",
+      "builder": "HN user crazygringo",
+      "source_name": "Hacker News",
+      "source_url": "https://news.ycombinator.com/item?id=50232564",
+      "source_date": "2026-10-25",
+      "repo": null,
+      "case_url": "https://agentsinthewildai.com/cases/310-their-guess-a-year-of-ml-study-claude-about-10-seconds/"
+    },
+    {
+      "id": 311,
+      "title": "Claude needed coaxing for citations. Undermind returned 100, ranked.",
+      "summary": "Claude 3.5 Sonnet was reluctant to give references for a brain-aging research question unless coaxed. Undermind, given the refined question, returned 100 ranked and lightly annotated citations.",
+      "agents": [
+        "Claude",
+        "Undermind"
+      ],
+      "topic": "Research",
+      "tier": "spotted",
+      "date_added": "2026-10-26",
+      "result": "Top hit: a 99.6% topic match in JAMA Network Open",
+      "time_saved": null,
+      "prompt": "I want to find studies on adult humans (ages 20-100+) that have used true longitudinal repeated measures designs to study [your topic] over several years, focusing on individuals who are relatively healthy and [relevant condition]. Return a ranked, annotated list of citations with abstracts and match scores.",
+      "builder": "HN user robwwilliams",
+      "source_name": "Hacker News",
+      "source_url": "https://news.ycombinator.com/item?id=41072464",
+      "source_date": "2024-07-25",
+      "repo": null,
+      "case_url": "https://agentsinthewildai.com/cases/311-claude-needed-coaxing-for-citations-undermind-returned-100-r/"
+    },
+    {
+      "id": 312,
+      "title": "6-8 weeks of Apple paperwork, and Gemini was right on every gotcha",
+      "summary": "An Apple Developer enrollment with tangled addresses, bank accounts and a European sales agreement. Gemini walked them through the requirements and was correct on every stated step and gotcha.",
+      "agents": [
+        "Gemini"
+      ],
+      "topic": "Work & operations",
+      "tier": "spotted",
+      "date_added": "2026-10-26",
+      "result": "Going in blind 'would've been much less successful'",
+      "time_saved": null,
+      "prompt": "Walk me through everything required to enroll for a [developer/business] account as a [your country] resident with a [specific complication, e.g. international address or bank account], including any extra agreements needed for selling in [other region]. Flag every step and gotcha along the way.",
+      "builder": "HN user browningstreet",
+      "source_name": "Hacker News",
+      "source_url": "https://news.ycombinator.com/item?id=50238895",
+      "source_date": "2026-10-26",
+      "repo": null,
+      "case_url": "https://agentsinthewildai.com/cases/312-6-8-weeks-of-apple-paperwork-and-gemini-was-right-on-every-g/"
+    },
+    {
+      "id": 313,
+      "title": "Asked to claim a refund, Meta Muse found it had already been paid",
+      "summary": "6 flights, 6 people and one SAS rebooking that dropped their prepaid food. Asked to handle the refund, Meta Muse dug through the SAS emails and found the fees had already been reimbursed.",
+      "agents": [
+        "Meta Muse"
+      ],
+      "topic": "Travel & bookings",
+      "tier": "spotted",
+      "date_added": "2026-10-26",
+      "result": "Unfiled since July; the answer was in SAS's own emails",
+      "time_saved": null,
+      "prompt": "Search my [email account] for every message from [airline/company name] about my [booking reference], and tell me whether the refund or reimbursement I was owed for [specific charge] has already been paid. Quote the exact email and date that confirms it.",
+      "builder": "HN user yalok",
+      "source_name": "Hacker News",
+      "source_url": "https://news.ycombinator.com/item?id=49619764",
+      "source_date": "2026-09-09",
+      "repo": null,
+      "case_url": "https://agentsinthewildai.com/cases/313-asked-to-claim-a-refund-meta-muse-found-it-had-already-been/"
+    },
+    {
+      "id": 314,
+      "title": "Devin found nearly every old term, but wrote 'instant instant restore'",
+      "summary": "Neon's docs team renamed a feature and asked Devin to update every old reference. It found nearly all of them, but its find/replace edits took another 20+ manual commits to polish.",
+      "agents": [
+        "Devin"
+      ],
+      "topic": "Content",
+      "tier": "spotted",
+      "date_added": "2026-10-26",
+      "result": "Still a huge time-saver, in the writers' words",
+      "time_saved": null,
+      "prompt": "We renamed [old term 1] and [old term 2] to [new term]. Search the docs in [repo] for every place the old terms appear, including variants. Update them to the new term, rewording any sentence where a plain find/replace would read awkwardly or repeat words. Open a pull request, list every file you touched, and flag any spot you were unsure about. Do not merge; a human reviews the full diff first.",
+      "builder": "Daniel Price and Barry Grenon",
+      "source_name": "Neon",
+      "source_url": "https://neon.com/blog/ai-workflows-for-docs-devin",
+      "source_date": "2025-06-23",
+      "repo": null,
+      "case_url": "https://agentsinthewildai.com/cases/314-devin-found-nearly-every-old-term-but-wrote-instant-instant/"
+    },
+    {
+      "id": 315,
+      "title": "Everyone mocks the 'book a hotel' agent demo. Grok Bot actually did it",
+      "summary": "Booking a hotel is the agent demo people love to poke fun at. One X user did exactly that with Grok Bot and told everyone about it the same day.",
+      "agents": [
+        "Grok Bot"
+      ],
+      "topic": "Travel & bookings",
+      "tier": "spotted",
+      "date_added": "2026-10-26",
+      "result": "Easy, and it saved them money",
+      "time_saved": null,
+      "prompt": "Help me book a hotel in [city] from [check-in date] to [check-out date] for [number of guests]. Compare options on price, location and cancellation terms, and show me the best choices with links. Do not book or pay for anything until I approve a specific option.",
+      "builder": "X user @mpatti",
+      "source_name": "X",
+      "source_url": "https://x.com/mpatti/status/2107894741211996276",
+      "source_date": "2026-10-07",
+      "repo": null,
+      "case_url": "https://agentsinthewildai.com/cases/315-everyone-mocks-the-book-a-hotel-agent-demo-grok-bot-actually/"
+    },
+    {
+      "id": 316,
+      "title": "Claude Code drove a robot: fifteen minutes parked at a filing cabinet",
+      "summary": "A camera robot kit, driven by Claude Code through chat. Asked to park by the room's door, it spent fifteen minutes in front of a filing cabinet, then started keeping notes on its own body.",
+      "agents": [
+        "Claude Code",
+        "Claude"
+      ],
+      "topic": "Engineering",
+      "tier": "spotted",
+      "date_added": "2026-10-26",
+      "result": "By day's end it had taught itself gentler turns",
+      "time_saved": null,
+      "prompt": "I have a small robot with a camera and an ultrasonic distance sensor that I can control from the terminal. Read the robot's docs, then help me drive it step by step. First task: find the door to the room and stop [distance] from it. After each move, take a photo and tell me what you see before the next move. Save notes about what worked and what didn't in a text file. Ask me before any action that could hit something or leave the room.",
+      "builder": "Tal Raviv",
+      "source_name": "Build AI product sense",
+      "source_url": "https://www.talraviv.co/p/i-gave-claude-a-robot-body",
+      "source_date": "2026-07-28",
+      "repo": null,
+      "case_url": "https://agentsinthewildai.com/cases/316-claude-code-drove-a-robot-fifteen-minutes-parked-at-a-filing/"
+    },
+    {
+      "id": 317,
+      "title": "Meta Muse was asked to find $1,000. It found about $35 a month",
+      "summary": "Meta's #MuseMoneyChallenge is about Muse finding $1,000 in savings. A tech writer tried it on their own bills, checking every suggestion before acting on it.",
+      "agents": [
+        "Meta Muse"
+      ],
+      "topic": "Money & bills",
+      "tier": "spotted",
+      "date_added": "2026-10-26",
+      "result": "Subscriptions to cut and a cheaper phone plan",
+      "time_saved": null,
+      "prompt": "Look through the accounts and services I've connected, such as [email], [calendar] and [bank statements], for recurring charges and subscriptions I may have forgotten, and for cheaper plans for [phone or other bills]. List each finding with the monthly amount and where you found it. Do not cancel, change or buy anything. I'll review each suggestion and approve any action myself.",
+      "builder": "Eric Hal Schwartz",
+      "source_name": "Yahoo Tech",
+      "source_url": "https://tech.yahoo.com/ai/meta-ai/articles/challenged-metas-muse-ai-1-105449624.html",
+      "source_date": "2026-09-24",
+      "repo": null,
+      "case_url": "https://agentsinthewildai.com/cases/317-meta-muse-was-asked-to-find-1-000-it-found-about-35-a-month/"
     }
   ]
 }

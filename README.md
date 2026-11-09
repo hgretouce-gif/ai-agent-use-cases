@@ -1,14 +1,14 @@
 # AI Agent Use Cases
 
-An open dataset of **315 real, first-hand AI agent use cases**: what people actually got agents like Claude, ChatGPT, Codex and OpenClaw to do, each one linked to the person's original post.
+An open dataset of **644 real, first-hand AI agent use cases**: what people actually got agents like Claude, ChatGPT, Codex and OpenClaw to do, each one linked to the person's original post.
 
-Curated by [Agents in the Wild](https://agentsinthewildai.com), where every case has the full story, a quote from the source and a prompt to try it yourself. Updated weekly. Last release: 2026-10-26.
+Curated by [Agents in the Wild](https://agentsinthewildai.com), where every case has the full story, a quote from the source and a prompt to try it yourself. Updated weekly. Last release: 2026-11-09.
 
 ## What's in it
 
 Each case has: title, summary, agents used, topic, tier, date added, the result, time saved (when the source states it), a reusable prompt, the builder credit, the original source link, the code repo (when there is one) and the case page on Agents in the Wild.
 
-- **Spotted** (308): a first-hand account, read in full and checked against its source.
+- **Spotted** (637): a first-hand account, read in full and checked against its source.
 - **Verified** (7): the headline result was also confirmed against public evidence (a repo, a live site or a detailed write-up).
 
 Files: [`data/cases.json`](data/cases.json) and [`data/cases.csv`](data/cases.csv).
@@ -19,37 +19,37 @@ Not included: the verbatim quotes, which belong to their authors, and the full w
 
 | Topic | Cases |
 |---|---:|
-| Engineering | 104 |
-| Life admin & home | 43 |
-| Personal productivity | 41 |
-| Work & operations | 28 |
-| Content | 25 |
-| Research | 17 |
-| Money & bills | 15 |
+| Engineering | 309 |
+| Personal productivity | 86 |
+| Life admin & home | 78 |
+| Work & operations | 33 |
+| Research | 32 |
+| Content | 32 |
+| Money & bills | 24 |
+| Shopping & errands | 12 |
+| Travel & bookings | 11 |
 | Marketing | 9 |
-| Shopping & errands | 9 |
-| Travel & bookings | 8 |
-| Finance | 7 |
+| Finance | 8 |
 | Sales | 4 |
-| Support | 3 |
+| Support | 4 |
 | Hospitality & real estate | 2 |
 
 ## Most used agents
 
 | Agent | Cases |
 |---|---:|
-| Claude | 90 |
-| Claude Code | 73 |
-| ChatGPT | 28 |
-| OpenClaw | 23 |
-| Gemini | 22 |
-| Codex | 21 |
+| Claude | 243 |
+| Claude Code | 149 |
+| ChatGPT | 57 |
+| Gemini | 45 |
+| Codex | 41 |
+| OpenClaw | 32 |
+| Cursor | 21 |
+| GitHub Copilot | 18 |
+| Grok Bot | 16 |
 | Hermes Agent | 14 |
-| Cursor | 12 |
-| Grok Bot | 12 |
-| Meta Muse | 8 |
-| Claude Cowork | 6 |
-| n8n | 5 |
+| Grok | 11 |
+| Meta Muse | 10 |
 
 ## Verified cases
 
@@ -63,23 +63,23 @@ Not included: the verbatim quotes, which belong to their authors, and the full w
 
 ## Latest additions
 
-- [Meta Muse was asked to find $1,000. It found about $35 a month](https://agentsinthewildai.com/cases/317-meta-muse-was-asked-to-find-1-000-it-found-about-35-a-month/) (Meta Muse). [Original source](https://tech.yahoo.com/ai/meta-ai/articles/challenged-metas-muse-ai-1-105449624.html)
-- [Claude Code drove a robot: fifteen minutes parked at a filing cabinet](https://agentsinthewildai.com/cases/316-claude-code-drove-a-robot-fifteen-minutes-parked-at-a-filing/) (Claude Code, Claude). [Original source](https://www.talraviv.co/p/i-gave-claude-a-robot-body)
-- [Everyone mocks the 'book a hotel' agent demo. Grok Bot actually did it](https://agentsinthewildai.com/cases/315-everyone-mocks-the-book-a-hotel-agent-demo-grok-bot-actually/) (Grok Bot). [Original source](https://x.com/mpatti/status/2107894741211996276)
-- [Devin found nearly every old term, but wrote 'instant instant restore'](https://agentsinthewildai.com/cases/314-devin-found-nearly-every-old-term-but-wrote-instant-instant/) (Devin). [Original source](https://neon.com/blog/ai-workflows-for-docs-devin)
-- [Asked to claim a refund, Meta Muse found it had already been paid](https://agentsinthewildai.com/cases/313-asked-to-claim-a-refund-meta-muse-found-it-had-already-been/) (Meta Muse). [Original source](https://news.ycombinator.com/item?id=49619764)
-- [6-8 weeks of Apple paperwork, and Gemini was right on every gotcha](https://agentsinthewildai.com/cases/312-6-8-weeks-of-apple-paperwork-and-gemini-was-right-on-every-g/) (Gemini). [Original source](https://news.ycombinator.com/item?id=50238895)
-- [Claude needed coaxing for citations. Undermind returned 100, ranked.](https://agentsinthewildai.com/cases/311-claude-needed-coaxing-for-citations-undermind-returned-100-r/) (Claude, Undermind). [Original source](https://news.ycombinator.com/item?id=41072464)
-- [Their guess: a year of ML study. Claude: about 10 seconds](https://agentsinthewildai.com/cases/310-their-guess-a-year-of-ml-study-claude-about-10-seconds/) (Claude). [Original source](https://news.ycombinator.com/item?id=50232564)
-- [Logins cut from four a day to one every three days, by Claude](https://agentsinthewildai.com/cases/309-logins-cut-from-four-a-day-to-one-every-three-days-by-claude/) (Claude). [Original source](https://news.ycombinator.com/item?id=50233541)
-- [Claude Code ported a GPU unlock to kernel 5.15: ~6% faster training](https://agentsinthewildai.com/cases/308-claude-code-ported-a-gpu-unlock-to-kernel-5-15-6-faster-trai/) (Claude Code). [Original source](https://news.ycombinator.com/item?id=50224546)
-- [ChatGPT dug up the 1978 letter behind US Letter paper](https://agentsinthewildai.com/cases/307-chatgpt-dug-up-the-1978-letter-behind-us-letter-paper/) (ChatGPT). [Original source](https://news.ycombinator.com/item?id=49634601)
-- [A $30,000 bill, a handwritten appeal: Copilot typed it up](https://agentsinthewildai.com/cases/306-a-30-000-bill-a-handwritten-appeal-copilot-typed-it-up/) (Gemini, Perplexity, Microsoft Copilot). [Original source](https://news.ycombinator.com/item?id=50225458)
-- [Zero code experience, an app in both stores, built with Claude Code](https://agentsinthewildai.com/cases/305-zero-code-experience-an-app-in-both-stores-built-with-claude/) (ChatGPT, Claude Code). [Original source](https://news.ycombinator.com/item?id=50227970)
-- [Claude ran up $45 unasked. ChatGPT pointed at one checkbox.](https://agentsinthewildai.com/cases/304-claude-ran-up-45-unasked-chatgpt-pointed-at-one-checkbox/) (Claude, ChatGPT). [Original source](https://news.ycombinator.com/item?id=49510617)
-- [PI was 3.1415 since 2013. Claude caught it: drift 750 times smaller](https://agentsinthewildai.com/cases/303-pi-was-3-1415-since-2013-claude-caught-it-drift-750-times-sm/) (Claude). [Original source](https://news.ycombinator.com/item?id=50210298)
+- [One prompt built a real-time caffeine tracker with Claude](https://agentsinthewildai.com/cases/646-one-prompt-built-a-real-time-caffeine-tracker-with-claude/) (Claude). [Original source](https://news.ycombinator.com/item?id=46679900)
+- [Claude and $30 in API credit built a USB audio driver for Haiku](https://agentsinthewildai.com/cases/645-claude-and-30-in-api-credit-built-a-usb-audio-driver-for-hai/) (Claude). [Original source](https://news.ycombinator.com/item?id=48124892)
+- [A TLA+ package manager by Claude, after about 30 minutes of fighting](https://agentsinthewildai.com/cases/644-a-tla-package-manager-by-claude-after-about-30-minutes-of-fi/) (Claude). [Original source](https://news.ycombinator.com/item?id=48130966)
+- [Claude basically one-shot a report that may replace 6 workdays](https://agentsinthewildai.com/cases/643-claude-basically-one-shot-a-report-that-may-replace-6-workda/) (Claude). [Original source](https://news.ycombinator.com/item?id=48259162)
+- [A custom agent spun up a TOTP device and verified MFA for $5.69](https://agentsinthewildai.com/cases/642-a-custom-agent-spun-up-a-totp-device-and-verified-mfa-for-5/) (Custom agent). [Original source](https://news.ycombinator.com/item?id=48758367)
+- [A $360 payment revealed a yearly plan Claude had quietly added](https://agentsinthewildai.com/cases/641-a-360-payment-revealed-a-yearly-plan-claude-had-quietly-adde/) (Claude). [Original source](https://news.ycombinator.com/item?id=48810428)
+- [A 2.5x price hike, so Claude vibecoded a clone in one evening](https://agentsinthewildai.com/cases/640-a-2-5x-price-hike-so-claude-vibecoded-a-clone-in-one-evening/) (Claude). [Original source](https://news.ycombinator.com/item?id=48849810)
+- [Copilot and Cursor rushed to code, Kiro planned first and it worked](https://agentsinthewildai.com/cases/639-copilot-and-cursor-rushed-to-code-kiro-planned-first-and-it/) (Kiro). [Original source](https://news.ycombinator.com/item?id=44576078)
+- [Built with Copilot and Gemini, a 6-year-old does maths 'for fun'](https://agentsinthewildai.com/cases/638-built-with-copilot-and-gemini-a-6-year-old-does-maths-for-fu/) (GitHub Copilot, Gemini). [Original source](https://news.ycombinator.com/item?id=44702649)
+- [At least an hour, untouched: Claude Code fixed an image problem](https://agentsinthewildai.com/cases/637-at-least-an-hour-untouched-claude-code-fixed-an-image-proble/) (Claude Code). [Original source](https://news.ycombinator.com/item?id=46530399)
+- [A site they'd price at $10k-$15k, built by ChatGPT on a $20 plan](https://agentsinthewildai.com/cases/636-a-site-they-d-price-at-10k-15k-built-by-chatgpt-on-a-20-plan/) (ChatGPT). [Original source](https://news.ycombinator.com/item?id=49983904)
+- [Claude merged two photos where ChatGPT kept changing every face](https://agentsinthewildai.com/cases/635-claude-merged-two-photos-where-chatgpt-kept-changing-every-f/) (Claude). [Original source](https://news.ycombinator.com/item?id=50003362)
+- [A cursor-jump bug in Netlify CMS, fixed in 30 minutes with Claude Code](https://agentsinthewildai.com/cases/634-a-cursor-jump-bug-in-netlify-cms-fixed-in-30-minutes-with-cl/) (Claude Code). [Original source](https://news.ycombinator.com/item?id=48257128)
+- [Part of ChatGPT's RabbitMQ starter code is now in production](https://agentsinthewildai.com/cases/633-part-of-chatgpt-s-rabbitmq-starter-code-is-now-in-production/) (ChatGPT). [Original source](https://news.ycombinator.com/item?id=44966537)
+- [A Rust email client from scratch: Claude took about 20 minutes](https://agentsinthewildai.com/cases/632-a-rust-email-client-from-scratch-claude-took-about-20-minute/) (Claude). [Original source](https://news.ycombinator.com/item?id=47069021)
 
-All 315 cases: [browse them on Agents in the Wild](https://agentsinthewildai.com) or load the data files.
+All 644 cases: [browse them on Agents in the Wild](https://agentsinthewildai.com) or load the data files.
 
 ## How to cite
 
